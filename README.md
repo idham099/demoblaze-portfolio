@@ -32,7 +32,11 @@
   
 6. Link ke hasil CI/CD GitHub Actions (Status Badge) dan Test Summary Report (Allure/HTML Report)
 7. fitur Web UI https://www.demoblaze.com/  :
+   
    a. Sign up
+
    b. Log in
+
    c. Checkout product
+
    d. Log out
