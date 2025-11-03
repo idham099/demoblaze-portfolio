@@ -1,0 +1,49 @@
+name: Full-Stack QA Automation Pipeline (Senior Portfolio)
+
+on:
+  push:
+    branches: [ main, master ] # Jalankan saat ada push ke main atau master
+  pull_request:
+    branches: [ main, master ] # Jalankan saat ada Pull Request
+
+jobs:
+  cypress_e2e_api_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4 # Ambil kode dari repo
+        
+      - name: Cypress Run (UI & Mocking)
+        uses: cypress-io/github-action@v6
+        with:
+          # Jalankan semua UI dan API test suite Anda
+          spec: cypress/e2e/ui_tests/*,cypress/e2e/api_tests/*
+          # Pasang flag --headless untuk CI
+          headless: true
+          
+      # --- Tambahan untuk Laporan Senior ---
+      - name: Upload Test Report Artifacts
+        if: always() # Upload report meskipun ada tes yang gagal
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-test-reports
+          path: cypress/videos/ # Simpan video dan screenshot sebagai bukti eksekusi
+          
+  k6_performance_test:
+    needs: cypress_e2e_api_test # Performance run setelah fungsionalitas lolos
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Install k6
+        run: sudo apt-get install k6 # Instal k6 di runner Ubuntu
+        
+      - name: Run Load Test (K6)
+        run: k6 run k6-performance-tests/login_load.js # Asumsi skrip k6 ada di root
+        
+      - name: Generate K6 Summary Artifact
+        if: always()
+        # Dalam proyek nyata, output k6 akan diunggah ke layanan seperti Grafana/InfluxDB
+        # Di sini kita hanya menampilkan output ke log sebagai bukti
+        run: echo "K6 Performance test summary generated in job log."
