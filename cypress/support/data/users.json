@@ -1,0 +1,20 @@
+{
+    "valid":{
+        "username": "admin234" ,
+        "password": "admin234"
+    },
+
+    "invalid":{
+        "username": "Test test" ,
+        "password": "test12345"
+    },
+    
+    "checkout":{
+        "name": "Ainul idham" ,
+        "country": "Indonesia",
+        "city": "Jakarta",
+        "creditCard": "1234567890123456",
+        "month": "12",
+        "year": "2028"
+    }
+}
