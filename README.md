@@ -12,8 +12,10 @@
   
 6. Strategi Pengujian: Menggunakan API Mocking/Stubbing untuk menstabilkan test case UI, untuk menunjukkan kemampuan dalam menangani Dependensi dan Arsitektur Testing.
 7. Instruksi:
-   npm install
-   npx cypress open
+   npm install,
+   
+   npx cypress open,
+   
    perintah k6 run
   
-8. Link ke hasil CI/CD GitHub Actions (Status Badge) dan Test Summary Report (Allure/HTML Report)
+9. Link ke hasil CI/CD GitHub Actions (Status Badge) dan Test Summary Report (Allure/HTML Report)
