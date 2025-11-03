@@ -1,15 +1,17 @@
 # demoblaze-portfolio
 
 1. Nama Proyek: DemoBlaze Full-Stack Automation Portfolio
-   Ini adalah proyek Full-Stack (UI, API, Performance)
 
-   
-   
+   Ini adalah proyek Full-Stack (UI, API, Performance)
+ 
+  
 2. Tujuan: Membangun Automation Framework E2E yang stabil
 
    penggunaan CI/CD dan pengujian Non-Fungsional (K6).
    
-3. Framework: Cypress (JavaScript/TypeScript),
+3. Framework:
+
+   Cypress (JavaScript/TypeScript),
 
    Page Object Model (POM),
 
@@ -19,6 +21,7 @@
   
 4. Strategi Pengujian: Menggunakan API Mocking/Stubbing untuk menstabilkan test case UI, untuk menangani Dependensi dan Arsitektur Testing.
 5. Instruksi:
+
    npm install,
    
    npx cypress open,
