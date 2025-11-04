@@ -5,8 +5,8 @@ import users from '../../support/data/users.json'
 const validUser = users.valid;
 
 describe('Modul: User Management', () => {
-    // --- TC_L001: Login Sukses dengan kredensial yang valid. ---
-    it('[Positive] TC_L001: Login Sukses dengan kredensial yang valid.', () => {
+    // --- TC_L003: Logout Sukses. ---
+    it('[Positive] TC_L003: Logout Sukses', () => {
         
         cy.intercept('POST', '**/login').as('loginRequest');
 
@@ -33,5 +33,10 @@ describe('Modul: User Management', () => {
         cy.get(HomePage.welcomeMessage)
             .should('be.visible')
             .and('contain', `Welcome ${validUser.username}`)
+
+        //kasih jeda sedikit
+        cy.wait(1000)
+        cy.get(HomePage.logOutLink).should('be.visible').click(); 
+        
     })
 })

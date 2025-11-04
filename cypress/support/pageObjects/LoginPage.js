@@ -19,7 +19,7 @@ class LoginPage {
     submit() {
         cy.get(this.loginButton).click()
     }
-    // Aksi tambahan untuk mendapatkan pesan error (jika menggunakan modal)
+  
     getErrorMessage() {
         return cy.get('.modal-content') 
     }
