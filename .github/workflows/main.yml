@@ -1,4 +1,4 @@
-name: Full-Stack QA Automation Pipeline (Senior Portfolio)
+name: Full-Stack QA Automation Pipeline 
 
 on:
   push:

@@ -1,6 +1,6 @@
-import HomePage from '../../support/pageObjects/HomePage'
-import LoginPage from '../../support/pageObjects/LoginPage'
-import users from '../../support/data/users.json'
+import HomePage from '../support/pageObjects/HomePage'
+import LoginPage from '../support/pageObjects/LoginPage'
+import users from '../support/data/users.json'
 
 const validUser = users.valid;
 
