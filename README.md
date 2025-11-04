@@ -19,9 +19,10 @@
    f. Implementasi BDD
 
    g. Struktur Test Suite
+   
     
-4. Strategi Pengujian: Menggunakan API Mocking/Stubbing untuk menstabilkan test case UI, untuk menangani Dependensi dan Arsitektur Testing.
-5. Instruksi:
+5. Strategi Pengujian: Menggunakan API Mocking/Stubbing untuk menstabilkan test case UI, untuk menangani Dependensi dan Arsitektur Testing.
+6. Instruksi:
 
    npm install,
    
@@ -30,8 +31,8 @@
    perintah k6 run
    
   
-6. Link ke hasil CI/CD GitHub Actions (Status Badge) dan Test Summary Report (Allure/HTML Report)
-7. Fitur Web UI https://www.demoblaze.com/  :
+7. Link ke hasil CI/CD GitHub Actions (Status Badge) dan Test Summary Report (Allure/HTML Report)
+8. Fitur Web UI https://www.demoblaze.com/  :
    
    a. Sign up
 
@@ -40,3 +41,21 @@
    c. Checkout product
 
    d. Log out
+
+9. Fitur API https://jsonplaceholder.typicode.com/ :
+
+   a. GET	/posts
+   
+   b. GET	/posts/1
+
+   c. GET	/posts/1/comments
+
+   d. GET	/comments?postId=1
+
+   e. POST	/posts
+
+   f. PUT	/posts/1
+
+   g. PATCH	/posts/1
+
+   h. DELETE	/posts/1
