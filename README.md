@@ -1,8 +1,12 @@
 # demoblaze-portfolio
 
-1. Nama Proyek: DemoBlaze Framework Full-Stack Automation Portfolio (UI, API, Performance)
+1. Nama Proyek:
+
+   DemoBlaze Framework Full-Stack Automation Portfolio (UI, API, Performance)
    
-2. Tujuan: Membangun Automation Framework E2E yang stabil dengan penggunaan CI/CD dan pengujian Non-Fungsional (K6).
+2. Tujuan:
+
+   Membangun Automation Framework E2E yang stabil dengan penggunaan CI/CD dan pengujian Non-Fungsional (K6).
    
 3. Komponen Framework:
 
@@ -21,8 +25,11 @@
    g. Struktur Test Suite
    
     
-5. Strategi Pengujian: Menggunakan API Mocking/Stubbing untuk menstabilkan test case UI, untuk menangani Dependensi dan Arsitektur Testing.
-6. Instruksi:
+4. Strategi Pengujian:
+
+   Menggunakan API Mocking/Stubbing untuk menstabilkan test case UI, untuk menangani Dependensi dan Arsitektur Testing.
+
+5. Instruksi:
 
    npm install,
    
@@ -31,8 +38,8 @@
    perintah k6 run
    
   
-7. Link ke hasil CI/CD GitHub Actions (Status Badge) dan Test Summary Report (Allure/HTML Report)
-8. Fitur Web UI https://www.demoblaze.com/  :
+6. Link ke hasil CI/CD GitHub Actions (Status Badge) dan Test Summary Report (Allure/HTML Report)
+7. Fitur Web UI https://www.demoblaze.com/  :
    
    a. Sign up
 
@@ -42,7 +49,7 @@
 
    d. Log out
 
-9. Fitur API https://jsonplaceholder.typicode.com/ :
+8. Fitur API https://jsonplaceholder.typicode.com/ :
 
    a. GET	/posts
    
