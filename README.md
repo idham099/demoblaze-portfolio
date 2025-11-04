@@ -49,7 +49,13 @@
 
    d. Log out
 
-8. Fitur API https://jsonplaceholder.typicode.com/ :
+
+   Excecution :
+   <img width="1882" height="892" alt="image" src="https://github.com/user-attachments/assets/e2da5994-4e49-4075-9df5-e0eb571f45bc" />
+
+   
+
+9. Fitur API https://jsonplaceholder.typicode.com/ :
 
    a. GET	/posts
    
