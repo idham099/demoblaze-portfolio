@@ -3,6 +3,7 @@ class HomePage {
     get loginLink() { return '#login2' }
     get welcomeMessage() { return '#nameofuser' }
     get logOutLink() {return '#logout2'}
+    get signUp() {return '#signin2'}
 
     // Actions
     visit() {
@@ -13,6 +14,9 @@ class HomePage {
     }
     clickLogout() {
         cy.get(this.logOutLink).click()
+    }
+    clicksignUp(){
+        cy.get(this.signUp).click()
     }
 }
 // Export instance agar bisa diakses di file test case
