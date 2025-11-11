@@ -15,10 +15,11 @@ describe('Modul: User Management', () => {
         cy.wait(500)
 
         //Then List phone muncul
-        
+        cy.wait(500)
 
         // Wait untuk memastikan request asli telah selesai diproses oleh backend
         cy.wait('@NavRequest') 
+        
                 
     }),
 
@@ -35,10 +36,11 @@ describe('Modul: User Management', () => {
         cy.wait(500)
 
         //Then List phone muncul
-        
+        cy.wait(500)
 
         // Wait untuk memastikan request asli telah selesai diproses oleh backend
         cy.wait('@NavRequest') 
+        
                 
     }),
 
@@ -55,10 +57,11 @@ describe('Modul: User Management', () => {
         cy.wait(500)
 
         //Then List phone muncul
-        
+        cy.wait(500)
 
         // Wait untuk memastikan request asli telah selesai diproses oleh backend
         cy.wait('@NavRequest') 
+        
                 
     })
 })
