@@ -1,27 +1,7 @@
 class Navigation {
     // Locators
-    get SignUsernameInput() { return '#sign-username' } 
-    get SignPasswordInput() { return '#sign-password' }
-    get SignUpButton() { return 'button[onclick="register()"]' }
-    get modalContainer() {return '#signInModal'}
-    
-    // menunggu hingga modalnya tampil
-    ensureModalIsVisible() {
-        cy.get(this.modalContainer)
-            .should('be.visible');
-    }
-
-    // Actions
-    fillSignUp(signusername, signpassword) {
-        cy.get(this.SignUsernameInput).type(signusername)
-        cy.get(this.SignPasswordInput).type(signpassword)
-    }
-    submit() {
-        cy.get(this.SignUpButton).click()
-    }
-  
-    getErrorMessage() {
-        return cy.get('.modal-content') 
-    }
+    get Klik() { return 'body > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(2)' } 
+    get Klik2() { return 'body > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(3)' }
+    get Klik3() { return 'body > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(4)' }
 }
 export default new Navigation()
