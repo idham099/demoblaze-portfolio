@@ -18,11 +18,11 @@ class Navigation {
     get Purchase() { return 'button[onclick="purchaseOrder()"]' }
 
 
-    fillOrder(name, country, city, card, month, year) {
+    fillOrder(name, country, city, creditCard, month, year) {
         cy.get(this.Name).type(name)
         cy.get(this.Country).type(country)
         cy.get(this.City).type(city)
-        cy.get(this.Card).type(card)
+        cy.get(this.Card).type(creditCard)
         cy.get(this.Month).type(month)
         cy.get(this.Year).type(year)
     }

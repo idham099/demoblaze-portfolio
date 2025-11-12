@@ -15,7 +15,7 @@ describe('Modul: User Management', () => {
         // When pengguna mengklik Klik Navigation phone 
         cy.get(Navigation.Klik).should('be.visible').click(); 
         
-        cy.wait(500);
+        cy.wait(2000);
 
         //And List phone muncul
        
@@ -41,7 +41,7 @@ describe('Modul: User Management', () => {
         // When pengguna mengklik Klik Navigation phone 
         cy.get(Navigation.Klik).should('be.visible').click(); 
         
-        cy.wait(500);
+        cy.wait(2000);
 
         //And List phone muncul
         
@@ -50,7 +50,7 @@ describe('Modul: User Management', () => {
         cy.get(Navigation.KlikProduk).should('be.visible').click(); 
 
         //And Halaman Detail Produk dimuat, menampilkan gambar, deskripsi, dan harga yang benar.
-
+         cy.wait(2000);
         //And Pengguna Klik tombol "Add to cart"
         cy.get(Navigation.KlikCart).should('be.visible').click(); 
 
@@ -77,7 +77,7 @@ describe('Modul: User Management', () => {
         // When pengguna mengklik Klik Navigation phone 
         cy.get(Navigation.Klik).should('be.visible').click(); 
         
-        cy.wait(500);
+        cy.wait(2000);
 
         //And List phone muncul
         
@@ -86,7 +86,7 @@ describe('Modul: User Management', () => {
         cy.get(Navigation.KlikProduk).should('be.visible').click(); 
 
         //And Halaman Detail Produk dimuat, menampilkan gambar, deskripsi, dan harga yang benar.
-
+         cy.wait(2000);
         //And Pengguna Klik tombol "Add to cart"
         cy.get(Navigation.KlikCart).should('be.visible').click(); 
 
@@ -97,7 +97,7 @@ describe('Modul: User Management', () => {
         cy.get('@alertStub')
             .should('be.calledOnce') 
             .and('be.calledWith', expectedAlertText);
-        
+         cy.wait(2000);
         //Then Item telah ditambahkan ke Cart (TC_P005 berhasil).
         cy.get(Navigation.KlikLinkCart).should('be.visible').click();    
 
@@ -116,7 +116,7 @@ describe('Modul: User Management', () => {
         // When pengguna mengklik Klik Navigation phone 
         cy.get(Navigation.Klik).should('be.visible').click(); 
         
-        cy.wait(500);
+        cy.wait(2000);
 
         //And List phone muncul
         
@@ -125,7 +125,7 @@ describe('Modul: User Management', () => {
         cy.get(Navigation.KlikProduk).should('be.visible').click(); 
 
         //And Halaman Detail Produk dimuat, menampilkan gambar, deskripsi, dan harga yang benar.
-
+         cy.wait(2000);
         //And Pengguna Klik tombol "Add to cart"
         cy.get(Navigation.KlikCart).should('be.visible').click(); 
 
@@ -136,10 +136,10 @@ describe('Modul: User Management', () => {
         cy.get('@alertStub')
             .should('be.calledOnce') 
             .and('be.calledWith', expectedAlertText);
-        
+         cy.wait(2000);
         //And Item telah ditambahkan ke Cart (TC_P005 berhasil).
         cy.get(Navigation.KlikLinkCart).should('be.visible').click();
-        
+         cy.wait(2000);
         //And Pada Halaman Cart, klik "Delete" di samping item.
         cy.get(Navigation.DeleteCart).should('be.visible').click();
 
@@ -160,7 +160,7 @@ describe('Modul: User Management', () => {
         // When pengguna mengklik Klik Navigation phone 
         cy.get(Navigation.Klik).should('be.visible').click(); 
         
-        cy.wait(500);
+        cy.wait(2000);
 
         //And List phone muncul
         
@@ -169,7 +169,7 @@ describe('Modul: User Management', () => {
         cy.get(Navigation.KlikProduk).should('be.visible').click(); 
 
         //And Halaman Detail Produk dimuat, menampilkan gambar, deskripsi, dan harga yang benar.
-
+         cy.wait(2000);
         //And Pengguna Klik tombol "Add to cart"
         cy.get(Navigation.KlikCart).should('be.visible').click(); 
 
@@ -180,13 +180,13 @@ describe('Modul: User Management', () => {
         cy.get('@alertStub')
             .should('be.calledOnce') 
             .and('be.calledWith', expectedAlertText);
-        
+         cy.wait(2000);
         //And Item telah ditambahkan ke Cart (TC_P005 berhasil).
         cy.get(Navigation.KlikLinkCart).should('be.visible').click();
-        
+         cy.wait(2000);
         //And Pengguna klik tombol "Place Order".
         cy.get(Navigation.KlikPlaceOrder).should('be.visible').click();
-
+         cy.wait(2000);
         //Then Muncul modal pop-up "Place order" (form pengisian data).
 
         // Wait untuk memastikan request asli telah selesai diproses oleh backend
@@ -198,13 +198,17 @@ describe('Modul: User Management', () => {
         cy.intercept('GET', '**/entries').as('NavRequest');
         const expectedAlertText = "Product added";
 
+        cy.window().then((win) => {
+             cy.stub(win, 'alert').as('alertStub');
+        });
+
         // Given pengguna berada di Halaman Utama
         HomePage.visit()
       
         // When pengguna mengklik Klik Navigation phone 
         cy.get(Navigation.Klik).should('be.visible').click(); 
         
-        cy.wait(500);
+        cy.wait(2000);
 
         //And List phone muncul
         
@@ -213,7 +217,7 @@ describe('Modul: User Management', () => {
         cy.get(Navigation.KlikProduk).should('be.visible').click(); 
 
         //And Halaman Detail Produk dimuat, menampilkan gambar, deskripsi, dan harga yang benar.
-
+         cy.wait(2000);
         //And Pengguna Klik tombol "Add to cart"
         cy.get(Navigation.KlikCart).should('be.visible').click(); 
 
@@ -222,20 +226,77 @@ describe('Modul: User Management', () => {
             cy.stub(win, 'alert').as('alertStub');
         });         
         cy.get('@alertStub')
-            .should('be.calledOnce') 
+            .should('have.been.calledOnce') 
             .and('be.calledWith', expectedAlertText);
-        
+         cy.wait(2000);
         //And Item telah ditambahkan ke Cart (TC_P005 berhasil).
         cy.get(Navigation.KlikLinkCart).should('be.visible').click();
         
         //And Pengguna klik tombol "Place Order".
         cy.get(Navigation.KlikPlaceOrder).should('be.visible').click();
-
+         cy.wait(2000);
         //And Muncul modal pop-up "Place order" (form pengisian data).
-        Navigation.fillOrder(Navigation.name, Navigation.country, Navigation.city, Navigation.card, Navigation.month, Navigation.year)
+        Navigation.fillOrder(CheckOut.name, CheckOut.country, CheckOut.city, CheckOut.creditCard, CheckOut.month, CheckOut.year)
         
         //And pengguna Klik tombol "Purchase"
         Navigation.submit()
+
+        //Then Modal "Thank you for your purchase!" muncul.
+         cy.wait(2000);
+        // Wait untuk memastikan request asli telah selesai diproses oleh backend
+        cy.wait('@NavRequest')         
+    }),
+
+    it('[Positive] TC_CH003: Verifikasi Detail Pembelian di Konfirmasi.', () => {
+        
+        cy.intercept('GET', '**/entries').as('NavRequest');
+        const expectedAlertText = "Product added";
+         cy.window().then((win) => {
+             cy.stub(win, 'alert').as('alertStub');
+        });
+
+        // Given pengguna berada di Halaman Utama
+        HomePage.visit()
+      
+        // When pengguna mengklik Klik Navigation phone 
+        cy.get(Navigation.Klik).should('be.visible').click(); 
+        
+        cy.wait(2000);
+
+        //And List phone muncul
+        
+
+        //And Pengguna melakukan klik pada produk
+        cy.get(Navigation.KlikProduk).should('be.visible').click(); 
+
+        //And Halaman Detail Produk dimuat, menampilkan gambar, deskripsi, dan harga yang benar.
+         cy.wait(2000);
+        //And Pengguna Klik tombol "Add to cart"
+        cy.get(Navigation.KlikCart).should('be.visible').click(); 
+
+        //And Muncul alert (popup) browser "Product added".
+         cy.window().then((win) => {
+            cy.stub(win, 'alert').as('alertStub');
+        });         
+        cy.get('@alertStub')
+            .should('have.been.calledOnce') 
+            .and('be.calledWith', expectedAlertText);
+         cy.wait(2000);
+        //And Item telah ditambahkan ke Cart (TC_P005 berhasil).
+        cy.get(Navigation.KlikLinkCart).should('be.visible').click();
+         cy.wait(2000);
+        //And Pengguna klik tombol "Place Order".
+        cy.get(Navigation.KlikPlaceOrder).should('be.visible').click();
+         cy.wait(2000);
+        //And Muncul modal pop-up "Place order" (form pengisian data).
+        Navigation.fillOrder(CheckOut.name, CheckOut.country, CheckOut.city, CheckOut.creditCard, CheckOut.month, CheckOut.year)
+        
+        //And pengguna Klik tombol "Purchase"
+        Navigation.submit()
+
+        //And Modal "Thank you for your purchase!" muncul.
+
+        // then Detail yang ditampilkan (e.g., Total Amount) sesuai dengan harga produk dan data yang dimasukkan.
 
         // Wait untuk memastikan request asli telah selesai diproses oleh backend
         cy.wait('@NavRequest')         
