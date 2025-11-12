@@ -17,6 +17,9 @@ class Navigation {
     get Year() { return '#year' }
     get Purchase() { return 'button[onclick="purchaseOrder()"]' }
 
+    get KlikPurchase() { return 'button[onclick="purchaseOrder()"]' }
+
+
 
     fillOrder(name, country, city, creditCard, month, year) {
         cy.get(this.Name).type(name)
